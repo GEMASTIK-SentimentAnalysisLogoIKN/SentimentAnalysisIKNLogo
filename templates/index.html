@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
-    <meta charset="UTF-8">
-    <title>FlaskApp</title>
+  <meta charset="UTF-8">
+  <title>Sentiment Analysis</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
 </head>
-<body>
-    <h1>Hello World!</h1>
-    <h2>Welcome to FlaskApp!</h2>
+
+<body style="background: #222;">
+ <div class="predict">
+	<h1>Sentiments Analysis Komentar Logo IKN</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+
+    <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="komen" placeholder="Masukkan komentar disini" required="required" />
+        <button type="submit" class="button-submit">Predict Sentiment</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
 </body>
 </html>
