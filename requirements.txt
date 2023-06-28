@@ -1,4 +1,4 @@
 Flask
 Gunicorn
-wordcloud
 scikit-learn
+numpy
