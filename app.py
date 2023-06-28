@@ -21,9 +21,7 @@ def ValuePredictor(to_predict_list):
 def predict():
     if request.method == 'POST':
         komen = request.form['komen']
-        
-        to_predict_list = komen
-        result = ValuePredictor(to_predict_list)
+        result = ValuePredictor(komen)
         if result == 'positive':
             prediction = 'Positive'
         elif result == 'negative':
@@ -31,7 +29,7 @@ def predict():
         else:
             prediction = 'Neutral'
 
-    return prediction
+    return render_template('index.html',komentar=komen,prediction_text=prediction)
 
 if __name__ == "__main__":
     app.run()
