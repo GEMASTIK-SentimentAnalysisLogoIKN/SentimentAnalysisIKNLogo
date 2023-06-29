@@ -1,6 +1,6 @@
 Flask
 numpy
-sklearn
+scikit-learn
 nltk
 Sastrawi
 Gunicorn
